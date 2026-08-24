@@ -3,10 +3,10 @@ name: Backend CI
 on:
   push:
     paths:
-      - 'starter/backend/**'
+      - 'backend/**'
   pull_request:
     paths:
-      - 'starter/backend/**'
+      - 'backend/**'
 
 jobs:
   test:
@@ -18,6 +18,6 @@ jobs:
           python-version: '3.10'
       - name: Install & Test Backend
         run: |
-          cd starter/backend
+          cd backend
           pip install -r requirements.txt
           pytest
