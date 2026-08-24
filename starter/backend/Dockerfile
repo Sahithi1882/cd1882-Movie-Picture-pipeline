@@ -4,15 +4,15 @@ ENV FLASK_RUN_HOST=0.0.0.0
 WORKDIR /
 RUN adduser -u 1000 -D app
 RUN apk update && \
-  apk add --no-cache\
+  apk add --no-cache \
   pcre \
   pcre-dev \
   build-base \
   gcc \
   linux-headers \
   openssl \
-  libffi-dev &&\
-  && pip install pipenv
+  libffi-dev && \
+  pip install pipenv
 
 RUN mkdir -p /var/www/app && mkdir /app
 
