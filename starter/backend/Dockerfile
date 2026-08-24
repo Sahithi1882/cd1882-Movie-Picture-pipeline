@@ -19,7 +19,7 @@ RUN mkdir -p /var/www/app && mkdir /app
 COPY Pipfile* /app/
 RUN pip install --upgrade pip && \
     pip install pipenv && \
-    pipenv install --system --skip-lock || pip install -r <(pipenv requirements) || true
+    pipenv install --system --deploy || pip install uwsgi flask flask-cors
 
 COPY . /app
 
