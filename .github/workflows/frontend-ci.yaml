@@ -1,0 +1,23 @@
+name: Frontend CI
+
+on:
+  push:
+    paths:
+      - 'starter/frontend/**'
+  pull_request:
+    paths:
+      - 'starter/frontend/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install & Test Frontend
+        run: |
+          cd starter/frontend
+          npm install
+          npm test -- --watchAll=false
