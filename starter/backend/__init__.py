@@ -8,6 +8,10 @@ app = Flask(__name__)
 CORS(app)
 app.register_blueprint(movies_api)
 
+@app.route('/')
+def index():
+    return redirect('/movies')
+
 # Start app
 if __name__ == "__main__":
     app.run(
