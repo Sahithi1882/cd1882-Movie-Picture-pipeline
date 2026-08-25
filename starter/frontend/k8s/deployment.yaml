@@ -21,4 +21,4 @@ spec:
             - containerPort: 3000
           env:
            - name: REACT_APP_MOVIE_PATH
-             value: "http://ad8cc3a27c2aa4b35b3872d8990c217e-1768592122.us-east-1.elb.amazonaws.com"
+             value: "http://backend:80"
