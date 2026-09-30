@@ -129,7 +129,7 @@ jobs:
         working-directory: starter/backend/k8s
         env:
           IMAGE_TAG: ${{ github.sha }}
-          ECR_REPOSITORY: 518707676386.dkr.ecr.us-east-1.amazonaws.com/backend
+          ECR_REPOSITORY: 913051689418.dkr.ecr.us-east-1.amazonaws.com/backend
         run: |
           kustomize edit set image backend=$ECR_REPOSITORY:$IMAGE_TAG
           kustomize build | kubectl apply -f -
